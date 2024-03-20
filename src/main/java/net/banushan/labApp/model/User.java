@@ -1,4 +1,4 @@
-package net.javaguides.springboot.model;
+package net.banushan.labApp.model;
 
 import java.util.Collection;
 

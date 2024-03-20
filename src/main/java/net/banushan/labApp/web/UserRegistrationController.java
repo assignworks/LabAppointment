@@ -1,14 +1,13 @@
-package net.javaguides.springboot.web;
+package net.banushan.labApp.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.javaguides.springboot.service.UserService;
-import net.javaguides.springboot.web.dto.UserRegistrationDto;
+import net.banushan.labApp.service.UserService;
+import net.banushan.labApp.web.dto.UserRegistrationDto;
 
 @Controller
 @RequestMapping("/registration")

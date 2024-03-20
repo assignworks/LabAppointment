@@ -1,9 +1,12 @@
-package net.javaguides.springboot.service;
+package net.banushan.labApp.service;
 
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import net.banushan.labApp.model.Role;
+import net.banushan.labApp.model.User;
+import net.banushan.labApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,10 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import net.javaguides.springboot.model.Role;
-import net.javaguides.springboot.model.User;
-import net.javaguides.springboot.repository.UserRepository;
-import net.javaguides.springboot.web.dto.UserRegistrationDto;
+import net.banushan.labApp.web.dto.UserRegistrationDto;
 
 @Service
 public class UserServiceImpl implements UserService{

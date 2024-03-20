@@ -1,4 +1,4 @@
-package net.javaguides.springboot.web.dto;
+package net.banushan.labApp.web.dto;
 
 public class UserRegistrationDto {
 	private String firstName;

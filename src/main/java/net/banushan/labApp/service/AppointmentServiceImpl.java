@@ -1,8 +1,7 @@
-package net.javaguides.springboot.service;
+package net.banushan.labApp.service;
 
-import net.javaguides.springboot.model.Appointment;
-import net.javaguides.springboot.repository.AppointmentRepo;
-import net.javaguides.springboot.web.dto.AppointmentDTO;
+import net.banushan.labApp.model.Appointment;
+import net.banushan.labApp.web.dto.AppointmentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class AppointmentServiceImpl implements AppointmentService {
 
     @Autowired
-    AppointmentRepo AppointmentRepo;
+    net.banushan.labApp.repository.AppointmentRepo AppointmentRepo;
 
     @Override
     public Appointment saveAppoinement(AppointmentDTO appointmentDTO) {

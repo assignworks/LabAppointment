@@ -1,4 +1,4 @@
-package net.javaguides.springboot.model;
+package net.banushan.labApp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

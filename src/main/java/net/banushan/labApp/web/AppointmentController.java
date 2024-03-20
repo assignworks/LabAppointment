@@ -1,7 +1,7 @@
-package net.javaguides.springboot.web;
+package net.banushan.labApp.web;
 
-import net.javaguides.springboot.service.AppointmentService;
-import net.javaguides.springboot.web.dto.AppointmentDTO;
+import net.banushan.labApp.service.AppointmentService;
+import net.banushan.labApp.web.dto.AppointmentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

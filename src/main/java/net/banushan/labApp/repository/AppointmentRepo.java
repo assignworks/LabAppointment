@@ -1,6 +1,6 @@
-package net.javaguides.springboot.repository;
+package net.banushan.labApp.repository;
 
-import net.javaguides.springboot.model.Appointment;
+import net.banushan.labApp.model.Appointment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AppointmentRepo extends JpaRepository<Appointment, Integer> {

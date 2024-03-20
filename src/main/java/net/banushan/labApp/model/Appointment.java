@@ -1,20 +1,39 @@
-package net.javaguides.springboot.web.dto;
+package net.banushan.labApp.model;
 
-public class AppointmentDTO {
+import javax.persistence.*;
+
+@Entity
+@Table(name =  "appoinment")
+public class Appointment {
+
+    @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    private int id;
+
     private String PName;
     private int age;
     private String BType;
     private String tests;
 
-    public AppointmentDTO() {
+    public Appointment() {
     }
 
-    public AppointmentDTO(String PName, int age, String BType, String tests) {
-        super();
+    public Appointment(String PName, int age, String BType, String tests) {
+
         this.PName = PName;
         this.age = age;
         this.BType = BType;
         this.tests = tests;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPName() {

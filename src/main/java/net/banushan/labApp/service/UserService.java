@@ -1,9 +1,9 @@
-package net.javaguides.springboot.service;
+package net.banushan.labApp.service;
 
+import net.banushan.labApp.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import net.javaguides.springboot.model.User;
-import net.javaguides.springboot.web.dto.UserRegistrationDto;
+import net.banushan.labApp.web.dto.UserRegistrationDto;
 
 public interface UserService extends UserDetailsService{
 	User save(UserRegistrationDto registrationDto);

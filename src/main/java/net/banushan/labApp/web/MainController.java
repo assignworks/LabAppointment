@@ -1,4 +1,4 @@
-package net.javaguides.springboot.web;
+package net.banushan.labApp.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,4 +20,10 @@ public class MainController {
 	public String appoinment() {
 		return "appointment";
 	}
+
+	@GetMapping("/appoinments")
+	public String appoinments() {
+		return "adminAppointmentStatus";
+	}
+
 }
