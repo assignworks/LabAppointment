@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Title</title>
+
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="container">
+    <form th:action="@{/appointment}" method="post" th:object="${appointment}">
+        <label for="PName">First Name</label>
+        <input type="text" id="PName" name="PName" th:field="*{PName}" placeholder="Your name..">
+
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" th:field="*{age}"  placeholder="Your age..">
+
+        <label for="BType">Blood type</label>
+        <input type="text" id="BType" name="BType" th:field="*{BType}" placeholder="Your blood type..">
+
+        <label for="tests">Tests</label>
+        <input type="text" id="tests" name="tests" th:field="*{tests}" placeholder="Your Tests..">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
