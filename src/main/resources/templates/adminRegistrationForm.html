@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>mBrain</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body class="app flex-row align-items-center">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mx-4">
+                <div class="card-body p-4">
+                    <h1>Register</h1>
+                    <p class="text-muted">Create your account</p>
+                    <form th:action="@{/adminRegistrationForm}" method="post" th:object="${admin}">
+                        <p class="text-muted">Institution</p>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+	                  <span class="input-group-text">
+	                    <i class="icon-user"></i>
+	                  </span>
+                            </div>
+                            <input class="form-control" type="text" id="firstName" th:field="*{firstName}" required autofocus="autofocus" placeholder="First Name">
+                            <label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="invalid-feedback" style="display: inline;"></label>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+	                  			<span class="input-group-text">
+	                   				 <i class="icon-user"></i>
+	                  </span>
+                            </div>
+                            <input class="form-control" type="text" id="lastName" th:field="*{lastName}" required autofocus="autofocus" placeholder="Last Name">
+                            <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="invalid-feedback" style="display: inline;"></label>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <input class="form-control" type="text" id="email" th:field="*{email}" required autofocus="autofocus"  placeholder="Email">
+                            <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="invalid-feedback" style="display: inline;"> </label>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+	                  <span class="input-group-text">
+	                    <i class="icon-lock"></i>
+	                  </span>
+                            </div>
+                            <input class="form-control" type="password" id="password" th:field="*{password}" required autofocus="autofocus" placeholder="Password">
+                            <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="invalid-feedback" style="display: inline;"></label>
+                        </div>
+
+
+
+                        <button class="btn btn-block btn-success" type="submit">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
