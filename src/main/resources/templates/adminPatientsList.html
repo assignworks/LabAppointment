@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 160px; /* Same as the width of the sidenav */
+            font-size: 28px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+        }
+
+
+        .container {
+            padding: 2rem 0rem;
+        }
+
+        h4 {
+            margin: 2rem 0rem 1rem;
+        }
+
+
+            td, th {
+                vertical-align: middle;
+            }
+
+    </style>
+</head>
+<body>
+
+<div class="sidenav">
+    <a href="#services">Patients</a>
+    <a href="#services">Reports</a>
+    <a href="#clients">Doctors</a>
+    <a th:href="@{/sendMail}">Mail</a>
+
+
+</div>
+
+<div class="main">
+
+    <div class ="container">
+        <div class = "row">
+            <h1> List Patients </h1>
+        </div>
+
+
+        <table class = "table table-striped table-bordered">
+            <thead class = "table-dark">
+            <tr>
+                <th>Patient ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Blood Type</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th> Actions </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each = "appointment: ${adminPatientsList}">
+                <td th:text = "${appointment.id}"></td>
+                <td th:text = "${appointment.PName}"></td>
+                <td th:text = "${appointment.email}"></td>
+                <td th:text = "${appointment.age}"></td>
+                <td th:text = "${appointment.BType}"></td>
+                <td th:text = "${appointment.date}"></td>
+                <td th:text = "${appointment.time}"></td>
+
+                <td>
+                    <a th:href = "@{/appointment/{id}(id=${appointment.id})}"
+                       class = "btn btn-danger">Delete</a>
+
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
+

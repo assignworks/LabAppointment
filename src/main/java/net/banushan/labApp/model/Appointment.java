@@ -14,6 +14,8 @@ public class Appointment {
     private int id;
 
     private String PName;
+
+    private String email;
     private int age;
     private String BType;
     private String tests;
@@ -37,8 +39,9 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Appointment(String PName, int age, String BType, String tests, String date, int time, String nameOnCard, Long creditCardNumber, int month, int year, int cvv) {
+    public Appointment(String PName, String email, int age, String BType, String tests, String date, int time, String nameOnCard, Long creditCardNumber, int month, int year, int cvv) {
         this.PName = PName;
+        this.email= email;
         this.age = age;
         this.BType = BType;
         this.tests = tests;
@@ -50,6 +53,7 @@ public class Appointment {
         this.year = year;
         this.cvv = cvv;
     }
+
 
     public int getId() {
         return id;
@@ -65,6 +69,14 @@ public class Appointment {
 
     public void setPName(String PName) {
         this.PName = PName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
@@ -152,10 +164,11 @@ public class Appointment {
         return "Appointment{" +
                 "id=" + id +
                 ", PName='" + PName + '\'' +
+                ", email='" + email + '\'' +
                 ", age=" + age +
                 ", BType='" + BType + '\'' +
                 ", tests='" + tests + '\'' +
-                ", date=" + date +
+                ", date='" + date + '\'' +
                 ", time=" + time +
                 ", nameOnCard='" + nameOnCard + '\'' +
                 ", creditCardNumber=" + creditCardNumber +

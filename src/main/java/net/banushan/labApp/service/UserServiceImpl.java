@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import net.banushan.labApp.web.dto.UserRegistrationDto;
+import net.banushan.labApp.Controller.dto.UserRegistrationDto;
 
 @Service
 public class UserServiceImpl implements UserService{

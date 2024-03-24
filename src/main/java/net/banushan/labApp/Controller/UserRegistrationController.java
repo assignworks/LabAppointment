@@ -1,4 +1,4 @@
-package net.banushan.labApp.web;
+package net.banushan.labApp.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.banushan.labApp.service.UserService;
-import net.banushan.labApp.web.dto.UserRegistrationDto;
+import net.banushan.labApp.Controller.dto.UserRegistrationDto;
 
 @Controller
 @RequestMapping("/registration")

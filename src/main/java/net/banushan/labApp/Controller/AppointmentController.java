@@ -1,13 +1,10 @@
-package net.banushan.labApp.web;
+package net.banushan.labApp.Controller;
 
 import net.banushan.labApp.service.AppointmentService;
-import net.banushan.labApp.web.dto.AppointmentDTO;
+import net.banushan.labApp.Controller.dto.AppointmentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/appointment")
@@ -29,6 +26,8 @@ public class AppointmentController {
     @PostMapping
     public String appointment(@ModelAttribute("appointment") AppointmentDTO AppointmentDTO) {
         appoinmentService.saveAppoinement(AppointmentDTO);
-        return "redirect:/appointment?success";
+        return "appointmentSuccess";
     }
+
+
 }

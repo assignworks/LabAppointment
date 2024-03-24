@@ -1,4 +1,4 @@
-package net.banushan.labApp.web.dto;
+package net.banushan.labApp.Controller.dto;
 
 public class UserRegistrationDto {
 	private String firstName;

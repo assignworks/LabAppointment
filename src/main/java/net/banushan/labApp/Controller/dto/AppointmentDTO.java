@@ -1,9 +1,11 @@
-package net.banushan.labApp.web.dto;
-
-import java.util.Date;
+package net.banushan.labApp.Controller.dto;
 
 public class AppointmentDTO {
+
+    private int id;
     private String PName;
+
+    private String email;
     private int age;
     private String BType;
     private String tests;
@@ -27,8 +29,10 @@ public class AppointmentDTO {
     public AppointmentDTO() {
     }
 
-    public AppointmentDTO(String PName, int age, String BType, String tests, String date, int time, String nameOnCard, Long creditCardNumber, int month, int year, int cvv) {
+    public AppointmentDTO(int id, String PName, String email, int age, String BType, String tests, String date, int time, String nameOnCard, Long creditCardNumber, int month, int year, int cvv) {
+        this.id = id;
         this.PName = PName;
+        this.email = email;
         this.age = age;
         this.BType = BType;
         this.tests = tests;
@@ -41,6 +45,13 @@ public class AppointmentDTO {
         this.cvv = cvv;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getPName() {
         return PName;
@@ -48,6 +59,14 @@ public class AppointmentDTO {
 
     public void setPName(String PName) {
         this.PName = PName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getAge() {
@@ -130,4 +149,22 @@ public class AppointmentDTO {
         this.cvv = cvv;
     }
 
+    @Override
+    public String toString() {
+        return "AppointmentDTO{" +
+                "id=" + id +
+                ", PName='" + PName + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", BType='" + BType + '\'' +
+                ", tests='" + tests + '\'' +
+                ", date='" + date + '\'' +
+                ", time=" + time +
+                ", nameOnCard='" + nameOnCard + '\'' +
+                ", creditCardNumber=" + creditCardNumber +
+                ", month=" + month +
+                ", year=" + year +
+                ", cvv=" + cvv +
+                '}';
+    }
 }
