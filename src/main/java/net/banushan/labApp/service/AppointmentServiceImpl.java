@@ -13,7 +13,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public Appointment saveAppoinement(AppointmentDTO appointmentDTO) {
-        Appointment appointment = new Appointment(appointmentDTO.getPName(), appointmentDTO.getAge(),appointmentDTO.getBType(), appointmentDTO.getTests());
+        Appointment appointment = new Appointment(appointmentDTO.getPName(), appointmentDTO.getAge(),appointmentDTO.getBType(), appointmentDTO.getTests(), appointmentDTO.getDate(), appointmentDTO.getTime(), appointmentDTO.getNameOnCard(), appointmentDTO.getCreditCardNumber(), appointmentDTO.getMonth(), appointmentDTO.getYear(), appointmentDTO.getCvv());
         return AppointmentRepo.save(appointment);
     }
 }
