@@ -9,44 +9,164 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
+	<style>
+		body
+		{
+			margin: 0;
+			color: white;
+		}
 
+		header
+		{
+			position: relative;
+			height: 100vh;
+			z-index: 0;
+			font-family: Calibri, Verdana, sans-serif;
+		}
+
+		header::before,
+		header::after
+		{
+			content: '';
+			background-color: hsl(20, 20%, 30%);
+			background-image: url("/img/loginimg.jpg");
+			background-size: cover;
+		}
+
+		header::before
+		{
+			position: fixed;
+			width: 100%;
+			z-index: -1;
+		}
+
+		header::after
+		{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+		}
+
+		img{
+			width: 150px;
+		}
+
+		nav
+		{
+			position: fixed;
+			background-color: #11111f;
+			width: 100%;
+		}
+
+		nav ul
+		{
+			margin: 0 0;
+			padding: 0.5em 0;
+			list-style: none;
+		}
+
+		nav li
+		{
+			display: inline-block;
+		}
+
+		nav a,
+		#skip-link
+		{
+			display: block;
+			outline: none;
+			margin: 0 1em;
+			padding: 0.5em 0 0.25em ;
+			border-bottom: 0.125em solid transparent;
+			color: white;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-shadow: 0 0 2px black;
+		}
+
+		nav a:focus,
+		nav a:hover
+		{
+			border-color: currentColor;
+		}
+
+		#skip-link
+		{
+			position: fixed;
+			left: 0;
+			top: 0;
+			background: black;
+			color: white;
+			text-decoration: inherit;
+			transform: translateY(-100%);
+			z-index: 1;
+		}
+
+		#skip-link:focus
+		{
+			transform: translateY(0);
+		}
+
+		main
+		{
+			padding: 1em;
+			max-width: 42em;
+			font: 1em/1.3 Cambria, Georgia, serif;
+		}
+
+		h1
+		{
+			font-size: 1.4em;
+		}
+
+		h2
+		{
+			font-size: 1em;
+		}
+
+
+		.hero h1 {
+			position: relative;
+			top: 250px;
+			color: #fff;
+			font-family: 'Museo Sans', Avenir, 'Helvetica Neue', Helvetica, sans-serif;
+			font-weight: 900;
+			font-size: 15vmin;
+			text-align: center;
+			font-size: 15vmin; /* If you want to be extra-fancy */
+			line-height: 110%;
+			text-shadow: 0.05em 0.05em 0.1em #000;
+			text-shadow: 0 0.025em 0.05em rgba(0,0,0,0.75), 0 0.05em 0.1em rgba(0,0,0,0.5);
+		}
+
+		.hero {
+			width:100%;
+
+			/* This is what centers it */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
 </head>
 <body>
-	<!-- create navigation bar ( header) -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registration and
-					Login Module</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
-				</ul>
-			</div>
+<header>
+		<a id="skip-link" href="#main-content">skip navigation</a>
+		<nav>
+			<ul>
+				<img src="img/logo.png" alt="">
+				<li><a th:href="@{/appointment}">My Appointment</a></li>
+				<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+				Welcome <span sec:authentication="principal.username"> User</span>
+			</ul>
 
-			<div id="navbar2" class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li><a th:href="@{/appointment}">Appointment</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+		</nav>
 
-	<br>
-	<br>
 
-	<div class="container">
-		<h1>Registration and Login with Spring Boot, Spring Security,
-			Thymeleaf, Hibernate and MySQL</h1>
-		Welcome <span sec:authentication="principal.username"> User</span>
-	</div>
+	</header>
+
 </body>
 </html>

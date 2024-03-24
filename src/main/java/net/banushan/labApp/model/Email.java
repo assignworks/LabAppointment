@@ -1,5 +1,8 @@
 package net.banushan.labApp.model;
 
+import javax.persistence.Entity;
+
+
 public class Email {
 
     private String to;

@@ -198,7 +198,7 @@
 
     <div class="formbold-form-wrapper">
 
-        <form action="sendMail" method="POST">
+        <form th:action="@{/sendMail}" method="post" th:object="${sendMail}">
             <div class="formbold-mb-5">
                 <label class="formbold-form-label">Email Address:</label>
                 <input name="email" placeholder="Enter your email" class="formbold-form-input"/>
@@ -212,7 +212,7 @@
 
 
             <div>
-                <button class="formbold-btn w-full">Send File</button>
+                <button class="formbold-btn w-full" type="submit">Send File</button>
             </div>
         </form>
     </div>

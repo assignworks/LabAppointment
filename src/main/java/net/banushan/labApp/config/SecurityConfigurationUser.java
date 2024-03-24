@@ -50,6 +50,7 @@ public class SecurityConfigurationUser extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(
 				 "/registration**",
 					"/adminRegistrationForm",
+					"/home",
 	                "/js/**",
 	                "/css/**",
 	                "/img/**").permitAll()

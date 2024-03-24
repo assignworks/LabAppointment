@@ -1,5 +1,6 @@
 package net.banushan.labApp.Controller;
 
+import net.banushan.labApp.Controller.dto.AppointmentDTO;
 import net.banushan.labApp.Controller.dto.EmailDTO;
 import net.banushan.labApp.model.Email;
 import net.banushan.labApp.service.EmailService;
@@ -24,12 +25,16 @@ public class SendMailController {
         return "sendMailForm";
     }
 
+    @ModelAttribute("sendMail")
+    public EmailDTO emailDTO() {
+        return new EmailDTO();
+    }
+
 
     @PostMapping("sendMail")
     public String sendMail(@ModelAttribute EmailDTO emailDTO, HttpSession session){
         emailService.sendMail(emailDTO);
-        session.setAttribute("msg" ,"success");
-        return "redirect:/";
+        return "sendMailForm";
     }
 
 }

@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class MainController {
+
+	@GetMapping("/home")
+	public String first(){
+		return "home";
+	}
 	
 	@GetMapping("/login")
 	public String login() {

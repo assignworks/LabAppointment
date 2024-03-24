@@ -23,6 +23,8 @@ public class AppointmentController {
         return "appointment";
     }
 
+
+
     @PostMapping
     public String appointment(@ModelAttribute("appointment") AppointmentDTO AppointmentDTO) {
         appoinmentService.saveAppoinement(AppointmentDTO);
