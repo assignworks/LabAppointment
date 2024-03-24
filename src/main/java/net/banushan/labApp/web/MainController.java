@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/registration")
+@RequestMapping("/")
 public class MainController {
 	
 	@GetMapping("/login")
@@ -28,16 +28,6 @@ public class MainController {
 	@GetMapping("/appoinments")
 	public String appoinments() {
 		return "adminAppointmentStatus";
-	}
-
-	@GetMapping("/adminRegistration")
-	public String adminRegistration() {
-		return "adminRegistration";
-	}
-
-	@GetMapping("/adminDashboard")
-	public String adminDashboard() {
-		return "adminDashboard";
 	}
 
 }
