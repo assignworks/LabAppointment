@@ -10,6 +10,8 @@ public interface AppointmentService {
 
     List<Appointment>getAllAppoitnment();
 
+
+
     Appointment saveAppoinement(AppointmentDTO appointmentDTO);
 
     void deleteAppoinementById(int id);

@@ -16,7 +16,7 @@ public class AppointmentDTO {
 
     private String nameOnCard;
 
-    private Long creditCardNumber;
+    private int creditCardNumber;
 
     private int month;
 
@@ -29,7 +29,7 @@ public class AppointmentDTO {
     public AppointmentDTO() {
     }
 
-    public AppointmentDTO(int id, String PName, String email, int age, String BType, String tests, String date, int time, String nameOnCard, Long creditCardNumber, int month, int year, int cvv) {
+    public AppointmentDTO(int id, String PName, String email, int age, String BType, String tests, String date, int time, String nameOnCard, int creditCardNumber, int month, int year, int cvv) {
         this.id = id;
         this.PName = PName;
         this.email = email;
@@ -117,11 +117,11 @@ public class AppointmentDTO {
         this.nameOnCard = nameOnCard;
     }
 
-    public Long getCreditCardNumber() {
+    public int getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(Long creditCardNumber) {
+    public void setCreditCardNumber(int creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 

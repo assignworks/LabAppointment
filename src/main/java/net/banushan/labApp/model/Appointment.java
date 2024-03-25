@@ -1,11 +1,21 @@
 package net.banushan.labApp.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+
+@AllArgsConstructor
+
+@Data
+
+@Builder
 @Table(name =  "appoinment")
 public class Appointment {
 
@@ -27,7 +37,7 @@ public class Appointment {
 
     private String nameOnCard;
 
-    private Long creditCardNumber;
+    private int creditCardNumber;
 
     private int month;
 
@@ -39,7 +49,7 @@ public class Appointment {
     public Appointment() {
     }
 
-    public Appointment(String PName, String email, int age, String BType, String tests, String date, int time, String nameOnCard, Long creditCardNumber, int month, int year, int cvv) {
+    public Appointment(String PName, String email, int age, String BType, String tests, String date, int time, String nameOnCard, int creditCardNumber, int month, int year, int cvv) {
         this.PName = PName;
         this.email= email;
         this.age = age;
@@ -127,11 +137,11 @@ public class Appointment {
         this.nameOnCard = nameOnCard;
     }
 
-    public Long getCreditCardNumber() {
+    public int getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(Long creditCardNumber) {
+    public void setCreditCardNumber(int creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 

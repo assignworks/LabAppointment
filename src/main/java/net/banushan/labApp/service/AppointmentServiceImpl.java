@@ -18,6 +18,7 @@ public class AppointmentServiceImpl implements AppointmentService {
         return AppointmentRepo.findAll();
     }
 
+
     @Override
     public Appointment saveAppoinement(AppointmentDTO appointmentDTO) {
         Appointment appointment = new Appointment(appointmentDTO.getPName(), appointmentDTO.getEmail(), appointmentDTO.getAge(),appointmentDTO.getBType(), appointmentDTO.getTests(), appointmentDTO.getDate(), appointmentDTO.getTime(), appointmentDTO.getNameOnCard(), appointmentDTO.getCreditCardNumber(), appointmentDTO.getMonth(), appointmentDTO.getYear(), appointmentDTO.getCvv());
